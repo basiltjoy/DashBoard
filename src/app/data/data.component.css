@@ -1,0 +1,4 @@
+.data_Scroll{
+    overflow-y: auto;
+    max-height: 500px;
+}
