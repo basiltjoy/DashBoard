@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-
   constructor(){
 
   }
@@ -16,6 +15,5 @@ export class HeaderComponent {
   ngOnInit(){
     
   }
-
   
 }

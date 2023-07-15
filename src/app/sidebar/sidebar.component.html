@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" style="position: fixed;">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -41,9 +41,10 @@
                             <span class="ms-1 d-none d-sm-inline">Insights</span>
                         </a>
                         <ul *ngIf="Touch">
-                            <li>Insight content 1</li>
-                            <li>Insight content 2</li>
+                            <li>A</li>
+                            <li>B</li>
                         </ul>
+
                     </li>
                     <div (click)="outsideClick()">
                         <li>
@@ -83,8 +84,8 @@
                 </ul>
             </div>
         </div>
-        <div class="col py-3">
-            <app-header></app-header>
+        <div class="col">
+            <app-header (click)="outsideClick()"></app-header>
         </div>
     </div>
 </div>
