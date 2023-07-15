@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -9,28 +8,18 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class DataComponent {
   imageUrl: SafeResourceUrl;
-  url: string = '/assets/Cars.json';
-  url2: string = '/assets/Films.json';
-  Data: any = [];
-  CarData: any;
   JSONHeader: any = [];
+  CarData: any;
 
   filmData: any;
-  filmHeader: any = [];
-  pageClick: number;
 
-  constructor(private sanitizer: DomSanitizer,
-    private http: HttpClient) {
+  constructor(private sanitizer: DomSanitizer) {
     this.imageUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/Graph.png');
-    this.pageClick=70.210
-
-    
   }
 
 
-  ngOnInit() {
-
-    // this.http.get(this.url).subscribe(res => {
+  ngOnInit(){
+        // this.http.get(this.url).subscribe(res => {
     //   this.Data.push(res)
     //   this.CarData = this.Data[0].cars
     //   console.log(this.CarData);
@@ -84,7 +73,7 @@ export class DataComponent {
       ]
     }]
 
-    this.filmData =[
+ this.filmData =[
       {
         "Title": "Avatar",
         "Year": "2009",
@@ -555,5 +544,8 @@ export class DataComponent {
         ]
       }
     ]
+
+
+
   }
 }
