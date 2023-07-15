@@ -23,6 +23,8 @@ export class DataComponent {
     private http: HttpClient) {
     this.imageUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/Graph.png');
     this.pageClick=70.210
+
+    
   }
 
 
