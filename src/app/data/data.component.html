@@ -62,6 +62,13 @@
                         <tr>
                             <th *ngFor="let item of JSONHeader">{{item | uppercase}}</th>
                         </tr>
+                        <tr *ngIf="CarData[0].cars">
+                           <th style="text-transform: uppercase;">Brand</th>
+                           <th style="text-transform: uppercase;">Model</th>
+                           <th style="text-transform: uppercase;">Colour</th>
+                           <th style="text-transform: uppercase;">Price</th>
+                           <th style="text-transform: uppercase;">Year</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of CarData">
@@ -70,6 +77,13 @@
                             <td>{{item.color}}</td>
                             <td>{{item.price}}</td>
                             <td>{{item.year}}</td>
+                        </tr> 
+                        <tr *ngFor="let item of CarData[0].cars" >
+                            <td *ngIf="CarData[0].cars">{{item.brand}}</td>
+                            <td *ngIf="CarData[0].cars">{{item.model}}</td>
+                            <td *ngIf="CarData[0].cars">{{item.color}}</td>
+                            <td *ngIf="CarData[0].cars">{{item.price}}</td>
+                            <td *ngIf="CarData[0].cars">{{item.year}}</td>
                         </tr>
                     </tbody>
                 </table>
