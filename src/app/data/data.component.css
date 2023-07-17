@@ -2,3 +2,10 @@
     overflow-y: auto;
     max-height: 500px;
 }
+
+/* Chart */
+#divChart{
+    display: block;
+    width: 550px;
+    height: 500px;
+}
