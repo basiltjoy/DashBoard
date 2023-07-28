@@ -20,6 +20,7 @@ export class DataComponent {
   data: any;
   chartData1: any;
   customChartInstance: any;
+  products: any = []
 
   constructor(private sanitizer: DomSanitizer) {
     this.imageUrl = this.sanitizer.bypassSecurityTrustResourceUrl('assets/Graph.png');
@@ -30,11 +31,11 @@ export class DataComponent {
 
   ngOnInit() {
     this.data = {
-      labels: ['June', 'July', 'August', 'September', 'October','November','December'],
+      labels: ['June', 'July', 'August', 'September', 'October', 'November', 'December'],
       datasets: [
         {
           label: '',
-          data: [10, 20, 25, 35, 28,20,30],
+          data: [10, 20, 25, 35, 28, 20, 30],
           backgroundColor: 'lightblue',
           borderColor: 'lightblue',
           fill: true,
@@ -65,6 +66,33 @@ export class DataComponent {
 
     this.customChartInstance = myChart
 
+    //Duplicate value check
+    const array = [1, 2, 3, 4, 2, 3, 5, 1];
+    const duplicateValues = array.filter((item, index) => array.indexOf(item) !== index);
+    console.log(duplicateValues);
+
+
+    //Array filter functionality
+    this.products = [
+
+      { name: 'Product A', category: 'Category 1' },
+
+      { name: 'Product B', category: 'Category 2' },
+
+      { name: 'Product C', category: 'Category 1' },
+
+      { name: 'Product D', category: 'Category 3' },
+
+    ];
+    for (let i = 0; i <= this.products.length; i++) {
+      let x = 'Product D'
+      if (x) {
+        if (x == this.products[i].name) {
+          console.log(this.products[i]);
+        }
+      }
+    }
+
 
   }
 
@@ -89,12 +117,12 @@ export class DataComponent {
 
     this.data.datasets[0].data[7] = this.data.datasets[0].data[7] + 1
     this.chartData1 = this.data.datasets[0].data[7]
-    
+
     console.log(this.chartData1)
     this.customChartInstance.update(this.chartData1);
   }
 
-  decrementClick(){
+  decrementClick() {
     this.data.datasets[0].data[0] = this.data.datasets[0].data[0] - 2
     this.chartData1 = this.data.datasets[0].data[0]
 
@@ -115,15 +143,10 @@ export class DataComponent {
 
     this.data.datasets[0].data[7] = this.data.datasets[0].data[7] - 2
     this.chartData1 = this.data.datasets[0].data[7]
-    
+
     console.log(this.chartData1)
     this.customChartInstance.update(this.chartData1);
   }
-
-
-
-
-
 
 
 

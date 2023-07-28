@@ -6,16 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  month: any = [];
+
+  constructor() {
+    this.month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+      'November', 'December']
+  }
 
 
-  constructor(){
+  ngOnInit() {
 
   }
 
 
-  ngOnInit(){
-    
-  }
-
-  
 }
