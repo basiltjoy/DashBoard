@@ -72,6 +72,8 @@ export class DataComponent {
     console.log(duplicateValues);
 
 
+
+
     //Array filter functionality
     this.products = [
 
